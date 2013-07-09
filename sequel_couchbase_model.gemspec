@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["misha.conway@machinima.com"]
   spec.description   = %q{Integrates sequel validations and sequel hooks into couchbase model.}
   spec.summary       = %q{ntegrates sequel validations and sequel hooks into couchbase model.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/MishaConway/sequel_couchbase_model"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
