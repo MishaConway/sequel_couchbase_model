@@ -84,7 +84,7 @@ module Sequel
       def self.find id
         begin
           super id
-        rescue Couchbase::Error::NotFound
+        rescue ::Couchbase::Error::NotFound
           nil
         end
       end
