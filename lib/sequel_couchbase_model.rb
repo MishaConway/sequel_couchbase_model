@@ -1,4 +1,5 @@
 require "sequel_couchbase_model/version"
+require 'couchbase/model'
 
 module Sequel
   module Couchbase
