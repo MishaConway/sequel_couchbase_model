@@ -18,11 +18,12 @@ module Sequel
         m = plugin.is_a?(Module) ? plugin : plugin_module(plugin)
         unless @@plugins.include?(m)
           @@plugins << m
-          m.apply(self, *args, &block) if m.respond_to?(:apply)
-          include(m::InstanceMethods) if plugin_module_defined?(m, :InstanceMethods)
-          extend(m::ClassMethods) if plugin_module_defined?(m, :ClassMethods)
-          dataset_extend(m::DatasetMethods) if plugin_module_defined?(m, :DatasetMethods)
         end
+        m.apply(self, *args, &block) if m.respond_to?(:apply)
+        include(m::InstanceMethods) if plugin_module_defined?(m, :InstanceMethods)
+        extend(m::ClassMethods) if plugin_module_defined?(m, :ClassMethods)
+        dataset_extend(m::DatasetMethods) if plugin_module_defined?(m, :DatasetMethods)
+
         m.configure(self, *args, &block) if m.respond_to?(:configure)
       end
 
